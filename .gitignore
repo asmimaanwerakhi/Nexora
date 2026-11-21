@@ -1,0 +1,49 @@
+# Dependencies in the root, frontend, backend, and any nested packages
+**/node_modules/
+
+# Build output and test artifacts
+dist/
+build/
+coverage/
+.nyc_output/
+.vite/
+.cache/
+.parcel-cache/
+.turbo/
+*.tsbuildinfo
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*-firebase-adminsdk-*.json
+firebase-service-account*.json
+service-account*.json
+secrets/
+
+# Logs and temporary files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.pid
+*.pid.lock
+*.seed
+*.tgz
+.npm/
+
+# Local runtime data
+/backend/uploads/
+/backend/tmp/
+
+# Editor and operating-system files
+.idea/
+.vscode-test/
+.DS_Store
+Thumbs.db
+Desktop.ini
