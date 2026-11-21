@@ -1,0 +1,190 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-50: #fff4e5;
+  --color-brand-100: #ffe3c2;
+  --color-brand-200: #ffcb8f;
+  --color-brand-300: #ffb15c;
+  --color-brand-400: #fa9a2e;
+  --color-brand-500: #f78b0c;
+  --color-brand-600: #d97300;
+  --color-brand-700: #b85808;
+  --color-brand-800: #8f4406;
+  --color-brand-900: #5f2d04;
+
+  --color-charcoal-50: #fafafa;
+  --color-charcoal-100: #f2f2f2;
+  --color-charcoal-200: #e3e3e3;
+  --color-charcoal-300: #c4c4c4;
+  --color-charcoal-400: #8f8f8f;
+  --color-charcoal-500: #6b6b6b;
+  --color-charcoal-600: #505050;
+  --color-charcoal-700: #3d3d3d;
+  --color-charcoal-800: #2e2e2e;
+  --color-charcoal-900: #1f1f1f;
+
+  --color-success: #2e9e5b;
+  --color-error: #d9363e;
+  --color-warning: #e6a700;
+  --color-info: #2f7bd9;
+}
+
+@theme inline {
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-hover: var(--brand-primary-hover);
+  --color-brand-primary-pressed: var(--brand-primary-pressed);
+  --color-brand-primary-soft: var(--brand-primary-soft);
+  --color-brand-primary-text: var(--brand-primary-text);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-heading: var(--heading);
+  --color-on-primary: var(--on-primary);
+}
+
+:root {
+  color-scheme: light;
+  --brand-primary: #f78b0c;
+  --brand-primary-hover: #fa9a2e;
+  --brand-primary-pressed: #d97300;
+  --brand-primary-soft: #fff4e5;
+  --brand-primary-text: #b85808;
+  --brand-secondary: #505050;
+
+  --bg: #ffffff;
+  --bg-subtle: #fafafa;
+  --surface: #f2f2f2;
+  --border: #e3e3e3;
+  --text: #3d3d3d;
+  --text-muted: #6b6b6b;
+  --heading: #505050;
+  --on-primary: #262626;
+
+  --success: #2e9e5b;
+  --error: #d9363e;
+  --warning: #e6a700;
+  --info: #2f7bd9;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text);
+  background: var(--bg);
+}
+
+:root.dark {
+  color-scheme: dark;
+  --bg: #1f1f1f;
+  --bg-subtle: #252525;
+  --surface: #2e2e2e;
+  --border: #3d3d3d;
+  --text: #e3e3e3;
+  --text-muted: #8f8f8f;
+  --heading: #ffffff;
+  --brand-secondary: #c4c4c4;
+  --brand-primary-soft: #3a2a14;
+  --brand-primary-text: #fa9a2e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+    --bg: #1f1f1f;
+    --bg-subtle: #252525;
+    --surface: #2e2e2e;
+    --border: #3d3d3d;
+    --text: #e3e3e3;
+    --text-muted: #8f8f8f;
+    --heading: #ffffff;
+    --brand-secondary: #c4c4c4;
+    --brand-primary-soft: #3a2a14;
+    --brand-primary-text: #fa9a2e;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+::selection {
+  color: var(--on-primary);
+  background: var(--brand-primary);
+}
+
+.dashboard-icon {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 0.75rem;
+}
+
+.dashboard-icon-orange {
+  color: var(--brand-primary-text);
+  background: var(--brand-primary-soft);
+}
+
+.dashboard-icon-violet {
+  color: #7154a3;
+  background: #f1edfc;
+}
+
+.dashboard-icon-green {
+  color: var(--success);
+  background: rgb(46 158 91 / 10%);
+}
+
+.dashboard-icon-blue {
+  color: var(--info);
+  background: rgb(47 123 217 / 10%);
+}
+
+:root.dark .dashboard-icon-violet {
+  color: #c4b2ec;
+  background: #322942;
+}
+
+.app-header-nav {
+  scrollbar-width: none;
+}
+
+.app-header-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-message-canvas {
+  background-color: var(--bg-subtle);
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--brand-primary) 7%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+}
