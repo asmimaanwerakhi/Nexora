@@ -1,6 +1,6 @@
-# CorpTalk frontend
+# Nexora frontend
 
-The CorpTalk web client is a responsive React application built with Vite, React Router, Zustand and Tailwind CSS 4.
+The Nexora web client is a responsive React application built with Vite, React Router, Zustand and Tailwind CSS 4.
 
 ## Development
 
